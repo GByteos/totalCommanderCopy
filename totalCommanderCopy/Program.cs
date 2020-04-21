@@ -51,7 +51,7 @@ namespace totalCommanderCopy
 
                     if (keyPressed == 'Y' | keyPressed == 'y' | keyPressed == 'J' | keyPressed == 'j')
                     {
-                        string arguments = $" /np /njh /njs /nfl /ndl /R:5 /W:5 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
+                        string arguments = $" /np /njh /njs /R:5 /W:5 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
 
                         ProcessStartInfo roboCopyStartInfo = new ProcessStartInfo();
                         roboCopyStartInfo.FileName = @"C:\Windows\System32\Robocopy.exe";
