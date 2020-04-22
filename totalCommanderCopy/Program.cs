@@ -13,6 +13,7 @@ namespace totalCommanderCopy
         static void Main(string[] args)
         {
             Console.WindowWidth = 150;
+            
 
             if (args.Length == 2)
             {
@@ -111,12 +112,11 @@ namespace totalCommanderCopy
 
                         if (directories.Count > 0)
                         {
-                            sourcePath = Path.GetDirectoryName(directories[0]);
-
                             destinationPath = destinationPath.Remove(destinationPath.Length - 1, 1);
 
                             foreach (var directory in directories)
                             {
+                                sourcePath = Path.GetDirectoryName(directory);
                                 string dir = directory.Remove(directory.Length - 1, 1);
                                 dir = Path.GetFileName(dir);
 
