@@ -12,14 +12,12 @@ namespace totalCommanderCopy
     {
         static void Main(string[] args)
         {
-            Console.WindowWidth = 150;
+            Console.BufferWidth = 1000;
             
 
             if (args.Length == 2)
             {
-                Console.WriteLine("Dou you want to copy the following files?\n");
-
-                Console.WriteLine(args[0]);
+                Console.WriteLine("Do you want to copy the following files:\n");
 
                 List<string> files = File.ReadAllLines(args[0], Encoding.GetEncoding("Windows-1252")).ToList();
                 List<string> filesExisting = new List<string>();
@@ -41,6 +39,9 @@ namespace totalCommanderCopy
                 bool valid = false;
 
                 int returnSumm = 0;
+                Console.WriteLine();
+                Console.WriteLine("| | | | | | | | | | | | | | |");
+                Console.WriteLine("V V V V V V V V V V V V V V V");
 
                 Console.WriteLine($"\nTo: {args[1]}\n");
 
@@ -52,6 +53,8 @@ namespace totalCommanderCopy
 
                     if (keyPressed == 'Y' | keyPressed == 'y' | keyPressed == 'J' | keyPressed == 'j')
                     {
+                        Console.Clear();
+
                         string arguments = $" /np /njh /njs /R:5 /W:5 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
 
                         ProcessStartInfo roboCopyStartInfo = new ProcessStartInfo();
@@ -90,7 +93,8 @@ namespace totalCommanderCopy
                         {
                             roboCopyStartInfo.Arguments += arguments;
 
-                            Console.WriteLine($"\n{ roboCopyStartInfo.Arguments }\n");
+                            //Console.WriteLine($"\n{ roboCopyStartInfo.Arguments }\n");
+                            Console.WriteLine("\nCopying files...");
 
                             using (Process robocopy = Process.Start(roboCopyStartInfo))
                             {
@@ -122,7 +126,9 @@ namespace totalCommanderCopy
 
                                 roboCopyStartInfo.Arguments = $"\"{ sourcePath }\" \"{ destinationPath }\\{ dir }\" /e{ arguments }";
 
-                                Console.WriteLine($"\n{ roboCopyStartInfo.Arguments }");
+                                //Console.WriteLine($"\n{ roboCopyStartInfo.Arguments }");
+
+                                Console.WriteLine("\nCopying files...");
 
                                 using (Process robocopy = Process.Start(roboCopyStartInfo))
                                 {
@@ -151,7 +157,7 @@ namespace totalCommanderCopy
                         valid = true;
                     }
                 }
-                if (returnSumm > 1)
+                if (returnSumm != 0 || returnSumm != 1 || returnSumm != 3)
                 {
                     Console.WriteLine($"Exit code: { returnSumm }");
 
