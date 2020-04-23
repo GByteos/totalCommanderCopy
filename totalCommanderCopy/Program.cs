@@ -157,7 +157,7 @@ namespace totalCommanderCopy
                         valid = true;
                     }
                 }
-                if (returnSumm != 0 || returnSumm != 1 || returnSumm != 3)
+                if (returnSumm != 0 & returnSumm != 1 & returnSumm != 3)
                 {
                     Console.WriteLine($"Exit code: { returnSumm }");
 
