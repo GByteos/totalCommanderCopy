@@ -55,7 +55,7 @@ namespace totalCommanderCopy
                     {
                         Console.Clear();
 
-                        string arguments = $" /np /njh /njs /R:5 /W:5 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
+                        string arguments = $" /np /njh /njs /R:0 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
 
                         ProcessStartInfo roboCopyStartInfo = new ProcessStartInfo();
                         roboCopyStartInfo.FileName = @"C:\Windows\System32\Robocopy.exe";
@@ -160,6 +160,12 @@ namespace totalCommanderCopy
                 if (returnSumm != 0 & returnSumm != 1 & returnSumm != 3)
                 {
                     Console.WriteLine($"Exit code: { returnSumm }");
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Please check your server connection and restart the copy process!");
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine();
 
                     Console.ReadKey();
                 }
