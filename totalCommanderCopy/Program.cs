@@ -55,7 +55,7 @@ namespace totalCommanderCopy
                     {
                         Console.Clear();
 
-                        string arguments = $" /np /njh /njs /R:0 /MT:20"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
+                        string arguments = $" /np /njh /njs /R:0 /MT:50"; //$" /e /eta /nfl /ndl /R:5 /W:5 /MT:20";
 
                         ProcessStartInfo roboCopyStartInfo = new ProcessStartInfo();
                         roboCopyStartInfo.FileName = @"C:\Windows\System32\Robocopy.exe";
